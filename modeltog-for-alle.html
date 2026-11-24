@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+    <!-- Grundlæggende tegnsæt og responsiv visning -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modeltog for alle - DMJU</title>
+
+    <!-- Bootstrap CSS indlæses før egne stylesheets, så egne regler kan overskrive ved behov -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Eget stylesheet til siden Modeltog for alle -->
     <link rel="stylesheet" href="css/modeltog-for-alle.css">
 </head>
-<body>
+
+<body class="page-modeltog">
+
+<!-- Hovedindhold på siden -->
+<main class="page-container container py-4">
+
+    <!-- Sektion 1: Introduktion og praktisk information om udstillingen -->
+    <section class="glass-card event-hero p-4 mb-4" aria-labelledby="event-title">
+        <p class="event-tag">DMJU Udstilling</p>
+        <h1 id="event-title">Modeltog for alle</h1>
+        <p class="event-dates">20.-21. marts 2027</p>
+
+    </section>
+
+</main>
 
 </body>
 </html>
