@@ -6,13 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modeltog for alle - DMJU</title>
 
-    <!-- Bootstrap CSS indlæses før egne stylesheets, så egne regler kan overskrive ved behov -->
+    <!-- Bootstrap CSS indlæses før egne stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons indlæses via CDN til ikoner i navigation og footer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- Eget stylesheet til siden Modeltog for alle -->
     <link rel="stylesheet" href="css/modeltog-for-alle.css">
 </head>
 
 <body class="page-modeltog">
+
+<!-- Sidehoved med logo, titel,Facebook-link og hovednavigation -->
+
+<header class="site-header">
+    <div class="container py-3">
+        <!-- Øverste linje i header: logo til venstre, titel i midten, socialt ikon til højre -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <!-- Vektorbaseret DMJU-logo med link til forsiden -->
+            <a href="index.html" class="brand-logo" aria-label="DMJU forside">
+                <svg width="52" height="52" viewBox="0 0 52 52" role="img" aria-hidden="true">
+                    <circle cx="26" cy="26" r="24" fill="#ffffff" stroke="22222" stroke-width="3"/>
+                    <text x="26" y="31" text-anchor="middle" font-family="systen-ui, sans-serif" font-size="14" font-weight="700" fill="#162028">DMJU</text>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+
+</header>
 
 <!-- Hovedindhold på siden -->
 <main class="page-container container py-4">
@@ -22,7 +45,9 @@
         <p class="event-tag">DMJU Udstilling</p>
         <h1 id="event-title">Modeltog for alle</h1>
         <p class="event-dates">20.-21. marts 2027</p>
-
+<p class="event-description">
+    Oplev modeljernbaner, detaljerede anlæg og aktiviteter for hele familien.
+</p>
     </section>
 
 </main>
