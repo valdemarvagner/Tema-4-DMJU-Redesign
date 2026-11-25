@@ -12,6 +12,11 @@
     <!-- Bootstrap Icons indlæses via CDN til ikoner i navigation og footer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Eget stylesheet til siden Modeltog for alle -->
     <link rel="stylesheet" href="css/modeltog-for-alle.css">
 </head>
@@ -66,7 +71,7 @@
     <!-- Sektion 1: Introduktion til udstillingen Modeltor for alle -->
     <section class="event-intro mb-5" aria-labelledby="event-title">
         <header class="text-center mb-4">
-            <h1 id="event.title">Udstilling "MODELTOG FOR ALLE"</h1>
+            <h1 class="heading-gradient" id="event.title">Udstilling "MODELTOG FOR ALLE"</h1>
             <p class="event-subtitle">Udstilling nr.30</p>
         </header>
 <!-- To spalter med beskrivelse og historik -->
@@ -121,7 +126,7 @@
 
     <!-- Sektion 2: Praktisk Info & Program med 5 temakort -->
     <section class="practical-info mb-5" aria-labelledby="practical-title">
-        <h2 id="practical-title" class="text-center mb-4">Praktisk Info &amp; Program</h2>
+        <h2 id="practical-title" class="text-center mb-4 heading-gradient" >Praktisk Info &amp; Program</h2>
 
         <!-- Øverste række med 3 kort -->
         <div class="row g-4 mb-4">
@@ -207,9 +212,9 @@
         <h2 id="sponsors-heading" class="visually-hidden">Sponsorer</h2>
 
         <div class="d-flex align-items-center justify-content-between gap-2">
-            <button type="button" class="btn-arrow-glass sponsor-prev" aria-label="Forrige sponsorer">&larr; ></button>
+            <button type="button" class="btn-arrow-glass sponsor-prev" aria-label="Forrige sponsorer">&larr;</button>
             <div class="sponsors-viewport flex-grow-1">
-                <ul class="sponsors-list list-unstyled d-flex mb-0">
+                <ul class="sponsors-list list-unstyled mb-0">
                     <li class="sponsor-item"><img src="img/Facebook-instergram-sponsor-logo-copy-560x240.jpg" alt="Facebook-instagram-sponsor-logo"></li>
                     <li class="sponsor-item"><img src="img/Heljan-vogn-560x240.jpg" alt="Heljan-vogn"></li>
                     <li class="sponsor-item"><img src="img/sponsor-logo-Elos-copy-560x240.jpg" alt="sponsor-logo-Elos"></li>
