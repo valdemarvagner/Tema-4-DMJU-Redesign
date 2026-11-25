@@ -18,7 +18,7 @@
 
 <body class="page-modeltog">
 
-<!-- Sidehoved med logo, titel,Facebook-link og hovednavigation -->
+<!-- Sidehoved med logo, titel, Facebook-link og hovednavigation -->
 
 <header class="site-header">
     <div class="container py-3">
@@ -63,14 +63,169 @@
 <!-- Hovedindhold på siden -->
 <main class="page-container container py-4">
 
-    <!-- Sektion 1: Introduktion og praktisk information om udstillingen -->
-    <section class="glass-card event-hero p-4 mb-4" aria-labelledby="event-title">
-        <p class="event-tag">DMJU Udstilling</p>
-        <h1 id="event-title">Modeltog for alle</h1>
-        <p class="event-dates">20.-21. marts 2027</p>
-        <p class="event-description">
-            Oplev modeljernbaner, detaljerede anlæg og aktiviteter for hele familien.
-        </p>
+    <!-- Sektion 1: Introduktion til udstillingen Modeltor for alle -->
+    <section class="event-intro mb-5" aria-labelledby="event-title">
+        <header class="text-center mb-4">
+            <h1 id="event.title">Udstilling "MODELTOG FOR ALLE"</h1>
+            <p class="event-subtitle">Udstilling nr.30</p>
+        </header>
+<!-- To spalter med beskrivelse og historik -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <p>
+                    DMJU arrangerer hvert år Danmarks største modeljernbane udstilling “MODELTOG FOR ALLE”.
+                    Med mere end 20 store klubanlæg i flere skalastørrelser, events, og mange butiks stande med gode tilbud,
+                    er DMJUs udstillinger et must for både de inkarnerede modeljernbane entusiaster og børnefamilierne.
+                    Udstillingerne er et godt udflugtsmål på en lørdag eller søndag.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Første DMJU udstilling blev afholdt i 1994, og i 2027 er det således nu den 30. gang at DMJU arrangerer udstilling.
+                    Udstillingerne afholdes skiftevis øst og vest for Storebælt. Den kommende udstilling finder sted i
+                    Taastrup Idræts Center 20.–21. marts 2027.
+                </p>
+            </div>
+        </div>
+        <!-- To fremhævede glaskort: Tid og sted + Hvem er med? -->
+        <div class="row g-4 justify-content-center">
+            <!-- Kort 1: Tid, sted og billetknap -->
+            <article class="col-md-5">
+                <div class="glass-card p-4 h-100">
+                    <h2 class="h5">Tid og sted</h2>
+                    <p class="mb-2"><strong>20.–21. marts 2027</strong></p>
+                    <!-- Knap der åbner billetformularen direkte på samme side -->
+                    <div class="my-3 text-center">
+                        <button type="button" class="btn-primary-glass" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                            Køb billetter
+                        </button>
+                        <small class="d-block mt-1">Børn: 50% rabat</small>
+                    </div>
+                    <p class="mb-0">Taastrup Idræts Center</p>
+                </div>
+            </article>
+            <!-- Kort 2: Deltager oversigt -->
+            <article class="col-md-5">
+                <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h2 class="h5">Hvem er med?</h2>
+                        <p class="mb-0">Oversigt over deltagerne</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Se oversigt over deltagerne">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sektion 2: Praktisk Info & Program med 5 temakort -->
+    <section class="practical-info mb-5" aria-labelledby="practical-title">
+        <h2 id="practical-title" class="text-center mb-4">Praktisk Info &amp; Program</h2>
+
+        <!-- Øverste række med 3 kort -->
+        <div class="row g-4 mb-4">
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">For besøgende</h3>
+                        <p class="mb-0">Program, billetter, åbningstider og parkering</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#ticketModal" data-bs-toggle="modal" data-bs-target="#ticketModal" class="btn-arrow-glass" aria-label="Information for besøgende">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">Udstillersliste &amp; Halplan</h3>
+                        <p class="mb-0">Se stande og kort</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Se udstillersliste og halplan">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">Diorama Konkurrence</h3>
+                        <p class="mb-0">Læs regler</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Læs regler for Diorama Konkurrence">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Nederste række med 2 forskudte kort -->
+        <div class="row g-4 justify-content-center">
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">Kommercielle udstillere</h3>
+                        <p class="mb-0">Info om standleje</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Info om standleje for kommercielle udstillere">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">For klubber</h3>
+                        <p class="mb-0">Tilmelding og info for klubanlæg</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Tilmelding og info for klubanlæg">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h6">Workshops &amp; Events</h3>
+                        <p class="mb-0">Program for aktiviteter</p>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn-arrow-glass" aria-label="Program for workshops og events">&rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sektion 3: Sponsorer og samarbejdspartnere (togvogne) -->
+    <section class="sponsors-section" aria-labelledby="sponsors-heading">
+        <h2 id="sponsors-heading" class="visually-hidden">Sponsorer</h2>
+
+        <div class="d-flex align-items-center justify-content-between gap-2">
+            <button type="button" class="btn-arrow-glass sponsor-prev" aria-label="Forrige sponsorer">&larr; ></button>
+            <div class="sponsors-viewport flex-grow-1">
+                <ul class="sponsors-list list-unstyled d-flex mb-0">
+                    <li class="sponsor-item"><img src="img/Facebook-instergram-sponsor-logo-copy-560x240.jpg" alt="Facebook-instagram-sponsor-logo"></li>
+                    <li class="sponsor-item"><img src="img/Heljan-vogn-560x240.jpg" alt="Heljan-vogn"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-Elos-copy-560x240.jpg" alt="sponsor-logo-Elos"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-MOROP-copy-560x240.jpg" alt="sponsor-logo-MOROP"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-hobbykaeden--560x240.jpg" alt="sponsor-logo-vogn-hobbykaeden"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-Kato-1-copy-560x240.jpg" alt="sponsor-logo-vogn-Kato"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-Modeljernbanes-dag-copy-560x240.jpg" alt="sponsor-logo-vogn-Modeljernbanes-dag"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-Nettog-copy-560x240.jpg" alt="sponsor-logo-vogn-Nettog"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-OK-stoetter-copy-560x240.jpg" alt="sponsor-logo-vogn-OK-stoetter-copy"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-OK-stoetter-ny-copy-560x240.jpg" alt="sponsor-logo-vogn-OK-stoetter-ny-copy"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-SMT-copy-1-560x240.jpg" alt="sponsor-logo-vogn-SMT"></li>
+                    <li class="sponsor-item"><img src="img/sponsor-logo-vogn-Vf-copy-560x240.jpg" alt="sponsor-logo-vogn-Vf"></li>
+                </ul>
+            </div>
+            <button type="button" class="btn-arrow-glass sponsor-next" aria-label="Næste sponsorer">&rarr;</button>
+        </div>
     </section>
 
 </main>
