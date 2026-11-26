@@ -58,7 +58,7 @@ main { flex: 1 0 auto; }
 }
 
 // Introduktionen står direkte på den blågrå sideflade som i forsidekompositionen.
-.home-intro { max-width: 1640px; padding-top: 34px; padding-bottom: 24px; }
+.home-intro { padding-top: 34px; padding-bottom: 24px; }
 .intro-copy { padding-top: 4px; }
 .intro-copy h1 { margin: 0 0 8px; font-size: clamp(30px, 3vw, 46px); font-weight: 700; line-height: 1.05; }
 .intro-copy h2 { max-width: 510px; margin: 0 0 8px; font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.25; }
@@ -75,7 +75,7 @@ main { flex: 1 0 auto; }
 .intro-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 57%; }
 
 // De tre hvide genvejskort er jævnt fordelt og centrerer ikon, titel og lille link.
-.quick-links { max-width: 1640px; padding-top: 0; padding-bottom: 18px; }
+.quick-links { padding-top: 0; padding-bottom: 18px; }
 .quick-card {
   display: flex;
   min-height: 108px;
@@ -98,7 +98,7 @@ main { flex: 1 0 auto; }
 }
 
 // Den kommende udstilling vises i et enkelt blåt billedkort med information til højre.
-.featured-event { max-width: 1640px; padding-top: 0; padding-bottom: 23px; }
+.featured-event { padding-top: 0; padding-bottom: 23px; }
 .event-card { min-height: 195px; overflow: hidden; border-radius: 14px; color: $home-ink; background: $home-blue; text-decoration: none; }
 .event-card:hover,
 .event-card:focus-visible { color: $home-ink; background: #7296b8; }
@@ -112,7 +112,7 @@ main { flex: 1 0 auto; }
 .event-copy .event-more { display: inline-block; margin-top: 5px; font-size: 13px; }
 
 // Nyhederne bruger tre ens billedkort; teksten er kort som i den viste skærmreference.
-.news-section { max-width: 1640px; padding-top: 0; padding-bottom: 28px; }
+.news-section { padding-top: 0; padding-bottom: 28px; }
 .news-section > h2 { margin: 0 0 10px; font-size: 23px; font-weight: 700; }
 .news-card { display: block; height: 100%; overflow: hidden; border-radius: 12px; color: $home-ink; background: $home-blue; text-decoration: none; }
 .news-card:hover,
