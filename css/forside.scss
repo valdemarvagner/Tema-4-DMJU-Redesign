@@ -57,75 +57,71 @@ main { flex: 1 0 auto; }
   .nav-link:focus-visible { color: #000; text-decoration: underline; text-underline-offset: 5px; }
 }
 
-// Forsidehero: et lokalt modeltogsfoto skaber blikfang med tydelig kontrast til teksten.
-.home-hero {
-  position: relative;
-  min-height: 490px;
+// Introduktionen står direkte på den blågrå sideflade som i forsidekompositionen.
+.home-intro { max-width: 1640px; padding-top: 34px; padding-bottom: 24px; }
+.intro-copy { padding-top: 4px; }
+.intro-copy h1 { margin: 0 0 8px; font-size: clamp(30px, 3vw, 46px); font-weight: 700; line-height: 1.05; }
+.intro-copy h2 { max-width: 510px; margin: 0 0 8px; font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.25; }
+.intro-copy p { max-width: 510px; margin: 0 0 13px; font-size: 16px; line-height: 1.35; }
+.intro-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.intro-actions .btn { padding: 8px 14px; border-radius: 8px; font-size: 14px; }
+.intro-actions .btn-primary { border-color: $home-navy; background: $home-navy; }
+.intro-actions .btn-primary:hover,
+.intro-actions .btn-primary:focus-visible { border-color: #172d40; background: #172d40; }
+.intro-actions .btn-outline-primary { border-color: $home-navy; color: $home-navy; }
+.intro-actions .btn-outline-primary:hover,
+.intro-actions .btn-outline-primary:focus-visible { color: #fff; background: $home-navy; }
+.intro-photo { height: 250px; overflow: hidden; border-radius: 12px; }
+.intro-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 57%; }
+
+// De tre hvide genvejskort er jævnt fordelt og centrerer ikon, titel og lille link.
+.quick-links { max-width: 1640px; padding-top: 0; padding-bottom: 18px; }
+.quick-card {
   display: flex;
-  align-items: center;
-  isolation: isolate;
-  overflow: hidden;
-  background: $home-navy url("../img/for-klubber-banner.jpg") center 48% / cover no-repeat;
-
-  &::before {
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: linear-gradient(90deg, rgb(36 60 83 / 94%) 0%, rgb(36 60 83 / 78%) 42%, rgb(36 60 83 / 10%) 100%);
-    content: "";
-  }
-}
-
-.hero-content { padding-top: 62px; padding-bottom: 62px; color: #fff; }
-.hero-eyebrow,
-.section-kicker { margin: 0 0 10px; color: $home-navy; font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.hero-eyebrow { color: #d6e4ef; }
-.home-hero h1 { max-width: 750px; margin: 0 0 16px; font-size: clamp(42px, 6vw, 76px); font-weight: 800; line-height: 1.04; }
-.hero-copy { max-width: 610px; margin: 0 0 28px; font-size: clamp(18px, 2vw, 23px); }
-.hero-button,
-.event-button { padding: 13px 20px; border: 0; border-radius: 9px; font-size: 16px; font-weight: 700; }
-.hero-button { color: #111; background: #fff; }
-.hero-button:hover,
-.hero-button:focus-visible { color: #111; background: #e8eef3; }
-.hero-button span,
-.event-button span { margin-left: 8px; }
-
-// Velkomstsektionen bruger Bootstrap-container og tre responsive kort til sidens hovedindgange.
-.welcome-section { padding-top: 70px; padding-bottom: 74px; }
-.section-heading { max-width: 760px; margin: 0 auto 34px; text-align: center; }
-.section-heading h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 42px); font-weight: 700; line-height: 1.15; }
-.section-heading > p:last-child { margin: 0; font-size: 18px; }
-.welcome-card {
-  display: flex;
+  min-height: 108px;
   flex-direction: column;
-  overflow: hidden;
-  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
   color: $home-ink;
-  background: $home-blue;
-  box-shadow: 0 8px 20px rgb(36 60 83 / 12%);
+  background: #fff;
+  box-shadow: 0 5px 14px rgb(36 60 83 / 12%);
+  text-align: center;
   text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .18s ease, box-shadow .18s ease;
 
   &:hover,
-  &:focus-visible { color: $home-ink; transform: translateY(-4px); box-shadow: 0 12px 25px rgb(36 60 83 / 20%); }
-
-  .card-image { height: 215px; overflow: hidden; background: #fff; }
-  .card-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .card-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 22px 24px 24px; }
-  .card-label { color: $home-navy; font-size: 14px; font-weight: 600; }
-  .card-title { margin-top: 5px; font-size: 28px; font-weight: 700; line-height: 1.2; }
-  .card-link { margin-top: 18px; font-size: 15px; font-weight: 700; }
+  &:focus-visible { color: $home-ink; transform: translateY(-2px); box-shadow: 0 8px 18px rgb(36 60 83 / 18%); }
+  i { margin-bottom: 3px; color: $home-navy; font-size: 23px; line-height: 1; }
+  > span { font-size: 15px; font-weight: 700; }
+  small { color: #586268; font-size: 11px; }
 }
 
-// Arrangementets blå callout fremhæver datoen og sender videre til den eksisterende eventside.
-.event-callout { padding: 44px 0; color: #fff; background: $home-navy; }
-.event-callout-inner { --bs-gutter-x: 2rem; }
-.event-callout .section-kicker { color: #b8cddd; }
-.event-callout h2 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
-.event-callout p:not(.section-kicker) { margin: 0; font-size: 18px; }
-.event-button { color: #111; background: #fff; }
-.event-button:hover,
-.event-button:focus-visible { color: #111; background: #e8eef3; }
+// Den kommende udstilling vises i et enkelt blåt billedkort med information til højre.
+.featured-event { max-width: 1640px; padding-top: 0; padding-bottom: 23px; }
+.event-card { min-height: 195px; overflow: hidden; border-radius: 14px; color: $home-ink; background: $home-blue; text-decoration: none; }
+.event-card:hover,
+.event-card:focus-visible { color: $home-ink; background: #7296b8; }
+.event-photo { height: 195px; padding: 12px 0 12px 12px; }
+.event-photo img { display: block; width: 100%; height: 100%; border-radius: 9px; object-fit: cover; }
+.event-copy { padding: 15px 24px; }
+.section-kicker { margin: 0 0 5px; color: $home-navy; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.event-copy h2 { margin: 0 0 4px; font-size: clamp(23px, 2.3vw, 32px); font-weight: 700; line-height: 1.15; }
+.event-copy p { margin: 0; font-size: 14px; line-height: 1.35; }
+.event-copy .event-date { font-weight: 600; }
+.event-copy .event-more { display: inline-block; margin-top: 5px; font-size: 13px; }
+
+// Nyhederne bruger tre ens billedkort; teksten er kort som i den viste skærmreference.
+.news-section { max-width: 1640px; padding-top: 0; padding-bottom: 28px; }
+.news-section > h2 { margin: 0 0 10px; font-size: 23px; font-weight: 700; }
+.news-card { display: block; height: 100%; overflow: hidden; border-radius: 12px; color: $home-ink; background: $home-blue; text-decoration: none; }
+.news-card:hover,
+.news-card:focus-visible { color: $home-ink; background: #7296b8; }
+.news-photo { height: 150px; overflow: hidden; }
+.news-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.news-copy { min-height: 69px; padding: 8px 11px 10px; }
+.news-copy h3 { margin: 0 0 2px; font-size: 15px; font-weight: 700; }
+.news-copy p { margin: 0; color: #263d52; font-size: 11px; }
 
 // Sidefod holder kontaktgenveje og sociale medier på linje med de andre DMJU-sider.
 .site-footer { min-height: 135px; color: #fff; background: $home-navy; }
@@ -143,18 +139,22 @@ main { flex: 1 0 auto; }
 .footer-facebook { width: 62px; height: 60px; margin-top: 17px; }
 .footer-facebook img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
-// Tablet: reducer vandrette mellemrum og behold tre kort i et fleksibelt Bootstrap-grid.
+// Tablet: behold tospaltet intro og sænk billedhøjden, mens genveje stadig står på række.
 @media (max-width: 991.98px) {
   .main-nav .nav { justify-content: center; gap: .75rem 2rem; }
   .main-nav .nav-link { font-size: 18px; }
   .brand-title { font-size: 17px; }
   .brand-title strong { font-size: 28px; }
   .brand-title .divider { margin: 0 9px; }
-  .home-hero { min-height: 430px; }
-  .welcome-section { padding-top: 56px; padding-bottom: 58px; }
+  .home-intro,
+  .quick-links,
+  .featured-event,
+  .news-section { padding-right: 28px; padding-left: 28px; }
+  .intro-photo { height: 220px; }
+  .news-photo { height: 130px; }
 }
 
-// Mobil: stabl headerindhold, navigation og kort; behold god læsbarhed og trykflader.
+// Mobil: stabl intro, genveje, eventbillede og nyheder uden at miste tydelig typografi.
 @media (max-width: 767.98px) {
   .site-header-inner { padding: 10px 16px 0; }
   .header-top { min-height: 70px; }
@@ -166,19 +166,22 @@ main { flex: 1 0 auto; }
   .main-nav { margin: 0 -16px; padding: 12px 14px; border-radius: 12px; }
   .main-nav .nav { gap: .5rem 1rem; }
   .main-nav .nav-link { padding: 4px 0; font-size: 13px; }
-  .home-hero { min-height: 390px; background-position: 59% center; }
-  .home-hero::before { background: linear-gradient(90deg, rgb(36 60 83 / 94%) 0%, rgb(36 60 83 / 78%) 65%, rgb(36 60 83 / 45%) 100%); }
-  .hero-content { padding-top: 48px; padding-bottom: 48px; }
-  .hero-copy { max-width: 480px; }
-  .welcome-section { padding-top: 44px; padding-bottom: 44px; }
-  .section-heading { margin-bottom: 24px; }
-  .section-heading > p:last-child { font-size: 16px; }
-  .welcome-grid { --bs-gutter-y: 1rem; }
-  .welcome-card .card-image { height: 205px; }
-  .welcome-card .card-content { padding: 18px 20px 20px; }
-  .welcome-card .card-title { font-size: 25px; }
-  .event-callout { padding: 34px 0; }
-  .event-callout .btn { margin-top: 6px; }
+  .home-intro,
+  .quick-links,
+  .featured-event,
+  .news-section { padding-right: 20px; padding-left: 20px; }
+  .home-intro { padding-top: 26px; padding-bottom: 20px; }
+  .intro-photo { height: auto; aspect-ratio: 1.55; }
+  .intro-actions .btn { font-size: 13px; }
+  .quick-links { padding-bottom: 15px; }
+  .quick-card { min-height: 92px; }
+  .event-card { min-height: 0; }
+  .event-photo { height: auto; padding: 12px 12px 0; }
+  .event-photo img { aspect-ratio: 1.7; }
+  .event-copy { padding: 14px 16px 17px; }
+  .featured-event { padding-bottom: 20px; }
+  .news-photo { height: auto; aspect-ratio: 1.55; }
+  .news-section { padding-bottom: 24px; }
   .footer-inner { min-height: 0; flex-wrap: wrap; gap: 18px; padding: 20px 16px; }
   .footer-actions { gap: 14px; }
   .footer-brand { margin-top: 0; }

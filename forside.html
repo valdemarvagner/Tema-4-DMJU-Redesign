@@ -9,6 +9,7 @@
 
     <!-- Bootstrap 5 leverer grid og tilgængelige hjælpeklasser før sidens egne regler. -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,58 +41,62 @@
     </div>
 </header>
 
-<!-- Hovedindhold: introduktion og indgange til unionens vigtigste tilbud. -->
+<!-- Hovedindhold: introduktion, genveje, kommende udstilling og aktuelle nyheder. -->
 <main>
-    <!-- Sektion 1: velkomst med blikfang og hovedhandling til den kommende udstilling. -->
-    <section class="home-hero" aria-labelledby="home-title">
-        <div class="container hero-content">
-            <p class="hero-eyebrow">Dansk Modeljernbane Union</p>
-            <h1 id="home-title">Modeltog for alle</h1>
-            <p class="hero-copy">Oplev passionen for modeljernbaner – fra små klubanlæg til Danmarks største modeltogsudstilling.</p>
-            <a class="btn hero-button" href="modeltog-for-alle.html">Se den kommende udstilling <span aria-hidden="true">→</span></a>
+    <!-- Sektion 1: introduktion i to spalter med hovedbudskab og modeljernbanefoto. -->
+    <section class="home-intro container" aria-labelledby="home-title">
+        <div class="row align-items-center g-4">
+            <div class="col-12 col-md-6 intro-copy">
+                <h1 id="home-title">Dansk Modeljernbane<br>Union</h1>
+                <h2>Fællesskabet for modeljernbaneklubber i Danmark</h2>
+                <p>Find klubber, oplev udstillinger og bliv en del af fællesskabet for modeljernbaneentusiaster i hele landet.</p>
+                <div class="intro-actions">
+                    <a class="btn btn-primary" href="for-klubber.html#medlemsfordele">Find en klub</a>
+                    <a class="btn btn-outline-primary" href="modeltog-for-alle.html">Se arrangementer</a>
+                </div>
+            </div>
+            <figure class="col-12 col-md-6 intro-photo mb-0">
+                <img src="img/for-klubber-banner.jpg" alt="Rødt modeltog kører gennem et detaljeret miniaturelandskab">
+            </figure>
         </div>
     </section>
 
-    <!-- Sektion 2: tre genveje gør det let at finde arrangementer, klubber og information. -->
-    <section class="welcome-section container" aria-labelledby="welcome-title">
-        <header class="section-heading">
-            <p class="section-kicker">Velkommen til DMJU</p>
-            <h2 id="welcome-title">Et fællesskab om modeljernbaner</h2>
-            <p>Vi samler danske modeljernbaneklubber og skaber oplevelser for alle, der holder af tog og miniatureverdener.</p>
-        </header>
-        <div class="row g-4 welcome-grid">
-            <article class="col-12 col-md-4">
-                <a class="welcome-card h-100" href="modeltog-for-alle.html">
-                    <figure class="card-image mb-0"><img src="img/figma-train-12.png" alt="Modeltog på en detaljeret miniaturebane"><figcaption class="visually-hidden">Modeltog og arrangementer</figcaption></figure>
-                    <span class="card-content"><span class="card-label">Oplev sammen</span><span class="card-title">Arrangementer</span><span class="card-link">Se hvad der sker <span aria-hidden="true">→</span></span></span>
-                </a>
-            </article>
-            <article class="col-12 col-md-4">
-                <a class="welcome-card h-100" href="for-klubber.html">
-                    <figure class="card-image mb-0"><img src="img/figma-train-13.png" alt="Modeltog og landskab fra en dansk modeljernbane"><figcaption class="visually-hidden">Klubfællesskab</figcaption></figure>
-                    <span class="card-content"><span class="card-label">Stå stærkere sammen</span><span class="card-title">For klubber</span><span class="card-link">Bliv en del af DMJU <span aria-hidden="true">→</span></span></span>
-                </a>
-            </article>
-            <article class="col-12 col-md-4">
-                <a class="welcome-card h-100" href="om-dmju.html">
-                    <figure class="card-image mb-0"><img src="img/figma-train-14.png" alt="Modeltog på skinner gennem et miniaturelandskab"><figcaption class="visually-hidden">Om Dansk Modeljernbane Union</figcaption></figure>
-                    <span class="card-content"><span class="card-label">Siden 1961</span><span class="card-title">Om DMJU</span><span class="card-link">Mød unionen <span aria-hidden="true">→</span></span></span>
-                </a>
-            </article>
-        </div>
+    <!-- Sektion 2: tre kompakte hvide Bootstrap-kort giver hurtig adgang til centrale sider. -->
+    <nav class="quick-links container" aria-label="Hurtige genveje">
+        <ul class="row g-3 list-unstyled mb-0">
+            <li class="col-12 col-md-4"><a class="quick-card" href="for-klubber.html#medlemsfordele"><i class="bi bi-people-fill" aria-hidden="true"></i><span>Find en klub</span><small>Læs mere <span aria-hidden="true">→</span></small></a></li>
+            <li class="col-12 col-md-4"><a class="quick-card" href="modeltog-for-alle.html"><i class="bi bi-calendar3" aria-hidden="true"></i><span>Arrangementer</span><small>Læs mere <span aria-hidden="true">→</span></small></a></li>
+            <li class="col-12 col-md-4"><a class="quick-card" href="modeltog-for-alle.html#participants"><i class="bi bi-trophy-fill" aria-hidden="true"></i><span>Konkurrencer</span><small>Læs mere <span aria-hidden="true">→</span></small></a></li>
+        </ul>
+    </nav>
+
+    <!-- Sektion 3: blå eventkort med foto og genvej til udstillingens program. -->
+    <section class="featured-event container" aria-labelledby="event-title">
+        <a class="event-card row g-0 align-items-center" href="modeltog-for-alle.html">
+            <figure class="col-12 col-md-4 event-photo mb-0"><img src="img/om-dmju-modeljernbane.png" alt="Rødt modeltog på skinner i en tunnel"></figure>
+            <div class="col-12 col-md-8 event-copy">
+                <p class="section-kicker">Kommende udstilling</p>
+                <h2 id="event-title">MODELTOG FOR ALLE</h2>
+                <p class="event-date">20. – 21. marts 2027</p>
+                <p class="event-location">Taastrup Idrætscenter</p>
+                <span class="event-more">Læs mere <span aria-hidden="true">→</span></span>
+            </div>
+        </a>
     </section>
 
-    <!-- Sektion 3: fremhævet dato giver besøgende en hurtig vej til udstillingsdetaljer. -->
-    <section class="event-callout" aria-labelledby="event-callout-title">
-        <div class="container event-callout-inner row align-items-center g-4">
-            <div class="col-12 col-lg-8">
-                <p class="section-kicker">Sæt kryds i kalenderen</p>
-                <h2 id="event-callout-title">MODELTOG FOR ALLE 2027</h2>
-                <p>Danmarks største modeltogsudstilling vender tilbage den 20.–21. marts 2027.</p>
-            </div>
-            <div class="col-12 col-lg-4 text-lg-end">
-                <a class="btn event-button" href="modeltog-for-alle.html">Læs mere om udstillingen <span aria-hidden="true">→</span></a>
-            </div>
+    <!-- Sektion 4: nyhedsoversigt med billedkort, der kan kobles til konkrete artikler. -->
+    <section class="news-section container" aria-labelledby="news-title">
+        <h2 id="news-title">Seneste nyheder</h2>
+        <div class="row g-3">
+            <article class="col-12 col-md-4">
+                <a class="news-card" href="modeltog-for-alle.html"><figure class="news-photo mb-0"><img src="img/for-klubber-banner.jpg" alt="Modeltog på en udstilling med miniaturelandskab"></figure><div class="news-copy"><h3>Nyhedsoverskrift</h3><p>Kort beskrivelse...</p></div></a>
+            </article>
+            <article class="col-12 col-md-4">
+                <a class="news-card" href="modeltog-for-alle.html"><figure class="news-photo mb-0"><img src="img/om-dmju-modeljernbane.png" alt="Modeltog på skinner gennem en tunnel"></figure><div class="news-copy"><h3>Nyhedsoverskrift</h3><p>Kort beskrivelse...</p></div></a>
+            </article>
+            <article class="col-12 col-md-4">
+                <a class="news-card" href="for-klubber.html"><figure class="news-photo mb-0"><img src="img/for-klubber-banner.jpg" alt="Rødt modeltog gennem et dansk miniaturelandskab"></figure><div class="news-copy"><h3>Nyhedsoverskrift</h3><p>Kort beskrivelse...</p></div></a>
+            </article>
         </div>
     </section>
 </main>
