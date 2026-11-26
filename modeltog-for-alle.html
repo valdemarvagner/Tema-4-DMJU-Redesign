@@ -44,7 +44,7 @@
 
     <!-- Primær navigation -->
     <nav class="main-nav" aria-label="Hovedmenu">
-        <ul class="nav justify-content-between flex-wrap">
+        <ul class="nav flex-wrap">
             <li class="nav-item">
                 <a class="nav-link active" href="#">Arrangementer</a>
             </li>
@@ -124,14 +124,15 @@
         </div>
     </section>
 
-    <!-- Sektion 2: Praktisk Info & Program med 5 temakort -->
+    <!-- Sektion 2: Praktisk Info & Program med 6 temakort -->
     <section class="practical-info mb-5" aria-labelledby="practical-title">
         <h2 id="practical-title" class="text-center mb-4 heading-gradient" >Praktisk Info &amp; Program</h2>
 
         <!-- Øverste række med 3 kort -->
-        <div class="row g-4 mb-4">
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+
+                                         <!-- Kort 1 -->
+        <div class="practical-grid">
+            <article class="glass-card practical-card">
                     <div>
                         <h3 class="h6">For besøgende</h3>
                         <p class="mb-0">Program, billetter, åbningstider og parkering</p>
@@ -139,11 +140,9 @@
                     <div class="text-end mt-3">
                         <a href="#ticketModal" data-bs-toggle="modal" data-bs-target="#ticketModal" class="btn-arrow-glass" aria-label="Information for besøgende">&rarr;</a>
                     </div>
-                </div>
             </article>
-
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                                        <!-- Kort 2-->
+            <article class="glass-card practical-card">
                     <div>
                         <h3 class="h6">Udstillersliste &amp; Halplan</h3>
                         <p class="mb-0">Se stande og kort</p>
@@ -151,11 +150,10 @@
                     <div class="text-end mt-3">
                         <a href="#" class="btn-arrow-glass" aria-label="Se udstillersliste og halplan">&rarr;</a>
                     </div>
-                </div>
             </article>
 
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+                                      <!-- Kort 3-->
+            <article class="glass-card practical-card">
                     <div>
                         <h3 class="h6">Diorama Konkurrence</h3>
                         <p class="mb-0">Læs regler</p>
@@ -163,14 +161,10 @@
                     <div class="text-end mt-3">
                         <a href="#" class="btn-arrow-glass" aria-label="Læs regler for Diorama Konkurrence">&rarr;</a>
                     </div>
-                </div>
             </article>
-        </div>
 
-        <!-- Nederste række med 2 forskudte kort -->
-        <div class="row g-4 justify-content-center">
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+        <!-- Nederste række med 3 forskudte kort -->
+            <article class="glass-card practical-card">
                     <div>
                         <h3 class="h6">Kommercielle udstillere</h3>
                         <p class="mb-0">Info om standleje</p>
@@ -178,11 +172,9 @@
                     <div class="text-end mt-3">
                         <a href="#" class="btn-arrow-glass" aria-label="Info om standleje for kommercielle udstillere">&rarr;</a>
                     </div>
-                </div>
             </article>
 
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+            <article class="glass-card practical-card">
                     <div>
                         <h3 class="h6">For klubber</h3>
                         <p class="mb-0">Tilmelding og info for klubanlæg</p>
@@ -190,21 +182,18 @@
                     <div class="text-end mt-3">
                         <a href="#" class="btn-arrow-glass" aria-label="Tilmelding og info for klubanlæg">&rarr;</a>
                     </div>
-                </div>
             </article>
 
-            <article class="col-md-4">
-                <div class="glass-card p-3 h-100 d-flex flex-column justify-content-between">
+            <article class="glass-card practical-card">
                     <div>
-                        <h3 class="h6">Workshops &amp; Events</h3>
+                        <h3 class="h6">Workshops &amp;amp; Events</h3>
                         <p class="mb-0">Program for aktiviteter</p>
                     </div>
                     <div class="text-end mt-3">
-                        <a href="#" class="btn-arrow-glass" aria-label="Program for workshops og events">&rarr;</a>
+                        <a href="#" class="btn-arrow-glass" aria-label="Program for Workshops og Events">&rarr;</a>
                     </div>
-                </div>
             </article>
-        </div>
+            </div>
     </section>
 
     <!-- Sektion 3: Sponsorer og samarbejdspartnere (togvogne) -->
