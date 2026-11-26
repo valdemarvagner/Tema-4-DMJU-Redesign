@@ -90,18 +90,10 @@
 
     <!-- Sektion 4: Formular til indmeldelse; labels er koblet direkte til felterne -->
     <section class="application-section container-fluid" id="ansoegning" aria-labelledby="application-title">
-        <div class="row g-4 align-items-stretch">
-            <div class="col-12 col-lg-4 application-intro">
-                <h2 id="application-title">Ansøg om medlemskab</h2>
-                <p>Vi bekræfter, at klubben har mindst tre aktive medlemmer.</p>
-                <figure class="application-illustration mb-0">
-                    <img src="img/om-dmju-modeljernbane.png" alt="Modeljernbane med tog og landskab">
-                </figure>
-            </div>
-            <div class="col-12 col-lg-8">
-                <form class="application-form" action="#" method="post" enctype="multipart/form-data">
-                    <fieldset>
-                        <legend>Oplysninger om klubben</legend>
+        <h2 id="application-title">Ansøg om medlemskab</h2>
+        <form class="application-form" action="#" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Oplysninger om klubben</legend>
                         <div class="row g-3">
                             <div class="col-12"><label for="club-name" class="form-label">Klubbens navn</label><input class="form-control" id="club-name" name="club-name" autocomplete="organization" required></div>
                             <div class="col-md-6"><label for="club-email" class="form-label">E-mail</label><input class="form-control" id="club-email" name="email" type="email" autocomplete="email" required></div>
@@ -110,11 +102,9 @@
                             <div class="col-12"><label for="club-statutes" class="form-label">Vedtægter <span>(påkrævet – PDF, DOC eller DOCX)</span></label><input class="form-control" id="club-statutes" name="statutes" type="file" accept=".pdf,.doc,.docx" required></div>
                             <div class="col-12 form-check-wrap"><input class="form-check-input" type="checkbox" value="yes" id="active-members" required><label class="form-check-label" for="active-members">Vi bekræfter, at klubben har mindst tre aktive medlemmer</label></div>
                             <div class="col-12"><button class="btn-submit" type="submit"><i class="bi bi-send-fill" aria-hidden="true"></i> Send ansøgning</button></div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+                </div>
+            </fieldset>
+        </form>
     </section>
 </main>
 

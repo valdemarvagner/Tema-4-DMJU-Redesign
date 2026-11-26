@@ -103,19 +103,19 @@ $club-card: #6489ad;
 
 // Formularområdet samler den korte vejledning og de nødvendige kluboplysninger.
 .application-section { padding-top: 48px; padding-bottom: 64px; }
-.application-intro h2 { margin: 0 0 12px; font-size: 30px; font-weight: 700; }
-.application-intro p { max-width: 360px; line-height: 1.65; }
-.application-illustration { overflow: hidden; max-width: 360px; border-radius: 16px; }
-.application-illustration img { display: block; width: 100%; height: 230px; object-fit: cover; }
-.application-form { height: 100%; padding: 26px; border-radius: 16px; background: #fff; }
-.application-form legend { margin-bottom: 18px; color: $club-navy; font-size: 23px; font-weight: 700; }
-.application-form .form-label { margin-bottom: 6px; font-weight: 600; }
-.application-form .form-label span { font-size: 13px; font-weight: 400; }
-.application-form .form-control { border-color: #9aa8b3; }
+.application-section > h2 { margin: 0 0 20px; font-size: 36px; font-weight: 700; }
+.application-form { width: min(100%, 424px); padding: 24px 20px; border-radius: 16px; background: $club-blue; }
+.application-form legend { margin-bottom: 16px; color: #111; font-size: 20px; font-weight: 700; }
+.application-form .row { --bs-gutter-y: 0.55rem; }
+.application-form .form-label { margin-bottom: 4px; font-size: 14px; font-weight: 600; }
+.application-form .form-label span { font-size: 12px; font-weight: 400; }
+.application-form .form-control { min-height: 34px; border: 0; border-radius: 7px; background-color: #fff; font-size: 13px; }
+.application-form textarea.form-control { min-height: 96px; }
 .application-form textarea { resize: vertical; }
-.form-check-wrap { display: flex; align-items: flex-start; gap: 10px; }
+.application-form input[type="file"] { padding: 4px; font-size: 12px; }
+.form-check-wrap { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; }
 .form-check-wrap .form-check-input { margin-top: 5px; }
-.btn-submit { padding: 12px 22px; border: 0; border-radius: 8px; background: $club-navy; color: #fff; font-weight: 600; }
+.btn-submit { width: 100%; padding: 9px 18px; border: 0; border-radius: 7px; background: $club-navy; color: #fff; font-size: 13px; font-weight: 600; }
 .btn-submit:hover, .btn-submit:focus-visible { background: #172d40; }
 
 // Sidefoden bruger den samme mørke blå og hvide tekst som resten af DMJU-siderne.
@@ -148,6 +148,7 @@ $club-card: #6489ad;
   .benefits-section h2, .membership-section > h2 { font-size: 28px; }
   .benefit-card { min-height: 135px; }
   .membership-section, .application-section { padding-top: 36px; }
+  .application-section > h2 { font-size: 28px; }
   .application-form { padding: 20px; }
   .footer-inner { align-items: flex-start !important; gap: 20px; padding: 22px 20px; }
   .footer-actions { gap: 12px; }
