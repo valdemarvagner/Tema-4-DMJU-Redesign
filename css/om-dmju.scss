@@ -253,6 +253,9 @@ body.page-about {
   .footer-brand,
   .footer-nav { display: flex; flex-direction: column; }
 
+  // Figma placerer DMJU-navnet og copyright-linjen i den øvre del af sidefoden.
+  .footer-brand { align-self: flex-start; margin-top: 7px; }
+
   // Handlingsgruppen holder Facebook-ikonet ved siden af de højrestillede links.
   .footer-actions { display: flex; align-items: center; gap: 35px; }
 
@@ -265,7 +268,7 @@ body.page-about {
   .footer-nav a:hover,
   .footer-nav a:focus-visible { text-decoration: underline; }
 
-  .footer-facebook { width: 62px; height: 60px; }
+  .footer-facebook { width: 62px; height: 60px; margin-top: 17px; }
 }
 
 // Tablet: bevar læsbar afstand, og vis bestyrelsen i to kolonner.
@@ -324,7 +327,8 @@ body.page-about {
   .site-footer .footer-actions { gap: 14px; }
   .site-footer .footer-nav a,
   .site-footer .footer-brand > span { font-size: 16px; }
-  .site-footer .footer-facebook { width: 44px; height: 44px; }
+  .site-footer .footer-brand { margin-top: 0; }
+  .site-footer .footer-facebook { width: 44px; height: 44px; margin-top: 0; }
 }
 
 // Små telefoner: undgå at brandteksten presse logo og socialt ikon sammen.
