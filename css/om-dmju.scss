@@ -1,0 +1,338 @@
+// Farve- og typografivariabler følger DMJUs eksisterende sider og Figma-rammen.
+$page-bg: #8b99a4;
+$nav-bg: #6489ad;
+$navy: #243c53;
+$card-label: #586268;
+$font-stack: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+// Fælles tokens gøres tilgængelige for eventuelle senere komponenter.
+:root {
+  color-scheme: light;
+  --color-bg-page: #{$page-bg};
+  --color-navy: #{$navy};
+  --color-nav: #{$nav-bg};
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body.page-about {
+  min-width: 320px;
+  margin: 0;
+  color: #111;
+  background: $page-bg;
+  font-family: $font-stack;
+  line-height: 1.35;
+}
+
+// Sidehoved: størrelser og afstande følger den fælles DMJU-navigation.
+.site-header {
+  background: $page-bg;
+
+  .site-header-inner {
+    padding: 14px 4.2% 0;
+  }
+
+  .header-top {
+    min-height: 80px;
+    margin-bottom: 14px;
+  }
+}
+
+.brand-logo img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.brand-title {
+  color: $navy;
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  strong { font-size: 32px; }
+  .divider { display: inline-block; margin: 0 10px; opacity: .8; }
+}
+
+.social-icon,
+.footer-facebook {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  img { display: block; width: 100%; height: 100%; }
+}
+
+.social-icon { width: 80px; height: 80px; }
+
+.main-nav {
+  margin: 0 -4.2vw;
+  padding: 0 4.2%;
+  border-radius: 16px;
+  background: $nav-bg;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+
+  .nav {
+    min-height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+  }
+
+  .nav-link {
+    padding: .7rem 0;
+    color: #111;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: opacity .2s ease;
+
+    &:hover,
+    &:focus-visible { color: #111; opacity: .68; }
+    &.active { color: #111; }
+  }
+}
+
+// Sektion 1: to spalter med introduktion og modeljernbanefoto.
+.about-intro {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 51px 60px 0;
+
+  .intro-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin: 0;
+  }
+
+  .intro-copy {
+    flex: 0 0 607px;
+    max-width: 607px;
+    padding: 0;
+  }
+
+  h1 {
+    margin: 0 0 23px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0 0 18px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  .intro-image {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 456px;
+    margin-top: 13px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 16px;
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  }
+}
+
+// Sektion 2: historieteksten fylder hele indholdets bredde under introduktionen.
+.history-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  // Den historiske overskrift starter let hen over billedets nederste kant som i Figma.
+  margin-top: -66px;
+  padding: 0 60px;
+
+  h2 {
+    margin: 51px 0 8px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    min-height: 136px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+}
+
+// Sektion 3: bestyrelsen er et Bootstrap-grid med tre lige brede kort på desktop.
+.board-section {
+  max-width: 1440px;
+  margin: 0 auto 124px;
+  padding: 0 60px;
+
+  > h2 {
+    margin: 8px 0 64px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 350px));
+    justify-content: space-between;
+    row-gap: 64px;
+    margin: 0;
+  }
+
+  .board-column { width: 100%; max-width: none; padding: 0; }
+}
+
+.board-card {
+  overflow: hidden;
+  border-radius: 16px;
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px 16px 0 0;
+  }
+
+  figcaption {
+    display: flex;
+    min-height: 125px;
+    flex-direction: column;
+    align-items: center;
+    padding: 19px 12px 12px;
+    border-radius: 0 0 16px 16px;
+    background: $nav-bg;
+    text-align: center;
+  }
+
+  span {
+    color: $card-label;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  strong {
+    margin-top: 1px;
+    color: #111;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+// Sidefod: mørkeblå bund med genveje og Facebook-ikon.
+.site-footer {
+  min-height: 135px;
+  color: #fff;
+  background: $navy;
+
+  .footer-inner {
+    min-height: 135px;
+    padding: 18px 4.2%;
+  }
+
+  .footer-brand,
+  .footer-nav { display: flex; flex-direction: column; }
+
+  .footer-brand > span,
+  .footer-nav a { color: #fff; font-size: 20px; line-height: 1.45; }
+
+  .footer-brand small { font-size: 14px; }
+
+  .footer-nav a { text-decoration: none; }
+  .footer-nav a:hover,
+  .footer-nav a:focus-visible { text-decoration: underline; }
+
+  .footer-facebook { width: 62px; height: 60px; }
+}
+
+// Tablet: bevar læsbar afstand, og vis bestyrelsen i to kolonner.
+@media (max-width: 1199.98px) {
+  .about-intro {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    .intro-copy { flex-basis: 48%; max-width: 48%; }
+    h1 { font-size: clamp(34px, 4vw, 48px); }
+    p { font-size: 18px; }
+    .intro-image { height: auto; min-height: 360px; }
+  }
+
+  .history-section,
+  .board-section { padding-right: 40px; padding-left: 40px; }
+
+  .board-section .board-grid { grid-template-columns: repeat(2, minmax(0, 350px)); }
+}
+
+// Mobil: stabl introspalter, forkort fotoet og vis ét bestyrelseskort pr. række.
+@media (max-width: 767.98px) {
+  .site-header .site-header-inner { padding: 10px 16px 0; }
+  .site-header .header-top { min-height: 60px; margin-bottom: 0; }
+  .brand-logo img { width: 56px; height: 56px; }
+  .brand-title { max-width: 190px; font-size: 11px; text-align: center; white-space: normal; }
+  .brand-title strong { font-size: 20px; }
+  .brand-title .divider { margin: 0 4px; }
+  .social-icon { width: 56px; height: 56px; }
+
+  .main-nav { margin: 0 -16px; padding: 0 12px; border-radius: 12px; }
+  .main-nav .nav { min-height: 52px; justify-content: center; gap: 0 14px; padding: 5px 0; }
+  .main-nav .nav-link { padding: .4rem 0; font-size: 12px; }
+
+  .about-intro { padding: 30px 20px 0; }
+  .about-intro .intro-row { flex-direction: column; gap: 20px; }
+  .about-intro .intro-copy { flex: 0 0 auto; max-width: none; }
+  .about-intro h1 { margin-bottom: 18px; font-size: clamp(30px, 8vw, 42px); }
+  .about-intro h2 { font-size: 20px; }
+  .about-intro p { font-size: 16px; }
+  .about-intro .intro-image { width: 100%; min-height: 0; height: auto; aspect-ratio: 1.5; margin-top: 0; }
+
+  .history-section { margin-top: 0; padding: 0 20px; }
+  .history-section h2 { margin: 34px 0 14px; font-size: 21px; }
+  .history-section p { min-height: 0; font-size: 16px; }
+
+  .board-section { margin-bottom: 48px; padding: 0 20px; }
+  .board-section > h2 { margin: 38px 0 22px; font-size: 36px; }
+  .board-section .board-grid { grid-template-columns: minmax(0, 350px); justify-content: center; row-gap: 22px; }
+  .board-card > img { height: auto; aspect-ratio: 0.875; }
+  .board-card figcaption { min-height: 100px; padding-top: 14px; }
+  .board-card span { font-size: 17px; }
+  .board-card strong { font-size: 25px; }
+
+  .site-footer .footer-inner { min-height: 135px; flex-wrap: wrap; gap: 12px; padding: 18px 20px; }
+  .site-footer .footer-nav a,
+  .site-footer .footer-brand > span { font-size: 16px; }
+  .site-footer .footer-facebook { width: 44px; height: 44px; }
+}
+
+// Små telefoner: undgå at brandteksten presse logo og socialt ikon sammen.
+@media (max-width: 380px) {
+  .brand-title { max-width: 145px; font-size: 10px; }
+  .brand-title strong { font-size: 17px; }
+  .main-nav .nav { gap: 0 9px; }
+  .main-nav .nav-link { font-size: 11px; }
+}
+
+// Respekter systemets ønske om reduceret bevægelse.
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms; }
+}

@@ -3,3 +3,4 @@ node_modules
 css/*.css
 css/*.css.map
 !css/modeltog-for-alle.css
+!css/om-dmju.css
