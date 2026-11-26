@@ -38,7 +38,7 @@
             </p>
             <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener"
                aria-label="DMJU på Facebook">
-                <i class="bi bi-facebook"></i>
+                <img src="img/facebook-mark-figma.svg" alt="">
             </a>
         </div>
 
@@ -66,7 +66,7 @@
 </header>
 
 <!-- Hovedindhold på siden -->
-<main class="page-container container py-4">
+<main class="page-container container py-4" id="eventPageMain">
 
     <!-- Sektion 1: Introduktion til udstillingen Modeltor for alle -->
     <section class="event-intro" aria-labelledby="event-title">
@@ -104,7 +104,7 @@
                     <p class="mb-2"><strong>20.–21. marts 2027</strong></p>
                     <!-- Knap der åbner billetformularen direkte på samme side -->
                     <div class="my-3 text-center">
-                        <button type="button" class="btn-primary-glass" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                        <button type="button" class="btn-primary-glass" data-open-ticket>
                             Køb billetter
                         </button>
                         <small class="d-block mt-1">Børn: 50% rabat</small>
@@ -141,7 +141,7 @@
                         <p class="mb-0">Program, billetter, åbningstider og parkering</p>
                     </div>
                     <div class="text-end mt-3">
-                        <a href="#ticketModal" data-bs-toggle="modal" data-bs-target="#ticketModal" class="btn-arrow-glass" aria-label="Information for besøgende">&rarr;</a>
+                        <button type="button" data-open-ticket class="btn-arrow-glass" aria-label="Information for besøgende">&rarr;</button>
                     </div>
             </article>
                                         <!-- Kort 2-->
@@ -225,24 +225,85 @@
         </div>
     </section>
 </main>
-<!-- Billetdialog. Billetsalget kan kobles på, når arrangørens billetlink er klart. -->
-<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title fs-5" id="ticketModalLabel">Billetter til Modeltog for alle</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Luk"></button>
-            </div>
-            <div class="modal-body">
-                <p>20.–21. marts 2027 i Taastrup Idræts Center.</p>
-                <p class="mb-0">Billetsalget åbner senere. Børn får 50 % rabat.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Luk</button>
-            </div>
+<section class="ticket-screen" id="ticketScreen" aria-label="Billetbestilling" hidden>
+    <div class="ticket-information">
+        <div>
+            <h2>Åbningstider:</h2>
+            <p>Lørdag 20. marts 2027 kl. 10–17</p>
+            <p>Søndag 21. marts 2027 kl. 10–16</p>
+            <h2>Priser:</h2>
+            <p>Lørdag / søndag voksne kr. 125,-</p>
+            <p>Weekendbillet voksen kr. 175,-</p>
+            <p>Børn (2–12 år) kr. 50,-</p>
+            <p>Billetten giver adgang til alle haller.</p>
+        </div>
+        <div>
+            <p>Gæster med handicap betaler entré på lige fod med DMJU’s øvrige gæster. Mod forevisning af gyldigt ledsagerkort kan en ledsager over 18 år komme gratis med.</p>
+            <p>Udstillingen har niveaufri adgang, og nogle haller har ramper.</p>
+            <p>Kontakt os, hvis du har brug for hjælp til billetkøb.</p>
         </div>
     </div>
-</div>
+
+    <h1 class="ticket-title heading-gradient" id="ticket-title" tabindex="-1">Køb billetter – “MODELTOG FOR ALLE”</h1>
+
+    <section class="ticket-panel" id="ticketSelection" aria-labelledby="ticket-selection-heading">
+        <h2 class="visually-hidden" id="ticket-selection-heading">Vælg billetter</h2>
+        <form id="ticketForm" novalidate>
+            <div class="ticket-layout">
+                <fieldset class="ticket-days">
+                    <legend class="visually-hidden">Vælg billetdag</legend>
+                    <button type="button" class="ticket-day is-selected" data-ticket-day="saturday" aria-pressed="true">Lørdag</button>
+                    <button type="button" class="ticket-day" data-ticket-day="sunday" aria-pressed="false">Søndag</button>
+                    <button type="button" class="ticket-day" data-ticket-day="weekend" aria-pressed="false">Weekendbillet</button>
+                </fieldset>
+
+                <div class="ticket-lines" aria-label="Antal billetter">
+                    <div class="ticket-line">
+                        <div class="quantity-control" aria-label="Antal voksenbilletter">
+                            <button type="button" data-quantity-change="adult" data-change="-1" aria-label="Fjern en voksenbillet">−</button>
+                            <output id="adultQuantity" aria-live="polite">1</output>
+                            <button type="button" data-quantity-change="adult" data-change="1" aria-label="Tilføj en voksenbillet">+</button>
+                        </div>
+                        <span>Voksenbillet</span>
+                        <span class="ticket-price-note" id="adultPriceNote">(125 kr.)</span>
+                    </div>
+                    <div class="ticket-line">
+                        <div class="quantity-control" aria-label="Antal børnebilletter">
+                            <button type="button" data-quantity-change="child" data-change="-1" aria-label="Fjern en børnebillet">−</button>
+                            <output id="childQuantity" aria-live="polite">1</output>
+                            <button type="button" data-quantity-change="child" data-change="1" aria-label="Tilføj en børnebillet">+</button>
+                        </div>
+                        <span>Børnebillet <small>Børn: 50 % rabat</small></span>
+                        <span class="ticket-price-note">(50 kr.)</span>
+                    </div>
+                </div>
+
+                <div class="ticket-totals" aria-live="polite">
+                    <p><span id="adultSubtotal">125 kr.</span> + <span id="childSubtotal">50 kr.</span></p>
+                    <p>Rabat: <span id="discountAmount">−25 kr.</span> &nbsp; I alt: <strong id="ticketTotal">150 kr.</strong></p>
+                    <label for="ticketEmail">E-mail</label>
+                    <input type="email" id="ticketEmail" name="email" autocomplete="email" placeholder="navn@eksempel.dk" required>
+                    <small class="form-error" id="emailError" hidden>Indtast en gyldig e-mailadresse.</small>
+                </div>
+            </div>
+            <p class="ticket-quantity-error" id="ticketQuantityError" hidden>Vælg mindst én billet.</p>
+            <p class="ticket-form-note">Du får en bestillingsoversigt i næste trin. Betaling og billetudsendelse er ikke koblet til denne formular.</p>
+            <button type="submit" class="btn-primary-glass ticket-submit">Bekræft køb</button>
+        </form>
+    </section>
+
+    <section class="ticket-panel ticket-confirmation" id="ticketConfirmation" aria-labelledby="confirmation-title" hidden>
+        <span class="confirmation-check" aria-hidden="true">✓</span>
+        <h2 id="confirmation-title" tabindex="-1">Tak for din bestilling!</h2>
+        <div class="confirmation-summary">
+            <p><strong>Udstilling:</strong> “MODELTOG FOR ALLE”<br><span id="confirmationDay">Lørdag 20. marts 2027</span></p>
+            <p><strong>Billetter:</strong> <span id="confirmationTickets">1 voksen + 1 barn</span><br><span id="confirmationDiscount">Børnerabat: 25 kr.</span><br>I alt: <strong id="confirmationTotal">150 kr.</strong></p>
+        </div>
+        <p class="confirmation-email">Bestillingsoversigten er klar til <strong id="confirmationEmail">—</strong>.</p>
+    </section>
+
+    <button type="button" class="ticket-back" data-ticket-back>Luk / Tilbage</button>
+</section>
 <!-- Sidefod -->
 <footer class="site-footer py-3">
     <div class="container">
@@ -258,13 +319,12 @@
             <div class="footer-social d-flex align-items-center gap-2">
                 <span>Følg os</span>
                 <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener" aria-label="DMJU på Facebook">
-                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                    <img src="img/facebook-mark-footer-figma.svg" alt="">
                 </a>
             </div>
         </div>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     (() => {
         const viewport = document.querySelector('.sponsors-viewport');
@@ -277,6 +337,8 @@
         let offset = 0;
         const gap = () => window.matchMedia('(max-width: 767.98px)').matches ? 12 : 39;
         const visibleCount = () => Math.max(1, Math.floor((viewport.clientWidth + gap()) / (items[0].getBoundingClientRect().width + gap())));
+        let carouselTimer;
+        let paused = false;
         const update = () => {
             const maxOffset = Math.max(0, items.length - visibleCount());
             offset = Math.min(offset, maxOffset);
@@ -286,10 +348,190 @@
             next.disabled = offset >= maxOffset;
         };
 
-        previous.addEventListener('click', () => { offset = Math.max(0, offset - 1); update(); });
-        next.addEventListener('click', () => { offset += 1; update(); });
+        const advance = (direction) => {
+            const maxOffset = Math.max(0, items.length - visibleCount());
+            offset = direction > 0 ? (offset >= maxOffset ? 0 : offset + 1) : (offset <= 0 ? maxOffset : offset - 1);
+            update();
+        };
+        const startAutoplay = () => {
+            window.clearInterval(carouselTimer);
+            if (!paused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                carouselTimer = window.setInterval(() => advance(1), 4000);
+            }
+        };
+
+        previous.addEventListener('click', () => { advance(-1); startAutoplay(); });
+        next.addEventListener('click', () => { advance(1); startAutoplay(); });
+        viewport.addEventListener('mouseenter', () => { paused = true; window.clearInterval(carouselTimer); });
+        viewport.addEventListener('mouseleave', () => { paused = false; startAutoplay(); });
+        viewport.addEventListener('focusin', () => { paused = true; window.clearInterval(carouselTimer); });
+        viewport.addEventListener('focusout', (event) => {
+            if (!viewport.contains(event.relatedTarget)) { paused = false; startAutoplay(); }
+        });
+        document.addEventListener('visibilitychange', () => document.hidden ? window.clearInterval(carouselTimer) : startAutoplay());
         window.addEventListener('resize', update);
         update();
+        startAutoplay();
+
+        const pageMain = document.querySelector('#eventPageMain');
+        const ticketScreen = document.querySelector('#ticketScreen');
+        const ticketSelection = document.querySelector('#ticketSelection');
+        const ticketConfirmation = document.querySelector('#ticketConfirmation');
+        const form = document.querySelector('#ticketForm');
+        if (!pageMain || !ticketScreen || !ticketSelection || !ticketConfirmation || !form) return;
+
+        const dayOptions = {
+            saturday: { label: 'Lørdag 20. marts 2027', adultPrice: 125, shortLabel: 'Lørdag' },
+            sunday: { label: 'Søndag 21. marts 2027', adultPrice: 125, shortLabel: 'Søndag' },
+            weekend: { label: 'Weekendbillet 20.–21. marts 2027', adultPrice: 175, shortLabel: 'Weekendbillet' }
+        };
+        const quantities = { adult: 1, child: 1 };
+        let selectedDay = 'saturday';
+        const money = (amount) => `${amount.toLocaleString('da-DK')} kr.`;
+        const quantityOutputs = {
+            adult: document.querySelector('#adultQuantity'),
+            child: document.querySelector('#childQuantity')
+        };
+        const priceNotes = {
+            adult: document.querySelector('#adultPriceNote'),
+            adultSubtotal: document.querySelector('#adultSubtotal'),
+            childSubtotal: document.querySelector('#childSubtotal'),
+            discount: document.querySelector('#discountAmount'),
+            total: document.querySelector('#ticketTotal')
+        };
+
+        const getTotal = () => {
+            const adultAmount = quantities.adult * dayOptions[selectedDay].adultPrice;
+            const childAmount = quantities.child * 50;
+            const discount = Math.round(childAmount * 0.5);
+            return { adultAmount, childAmount, discount, total: adultAmount + childAmount - discount };
+        };
+
+        const updatePrices = () => {
+            const values = getTotal();
+            quantityOutputs.adult.value = quantities.adult;
+            quantityOutputs.adult.textContent = quantities.adult;
+            quantityOutputs.child.value = quantities.child;
+            quantityOutputs.child.textContent = quantities.child;
+            priceNotes.adult.textContent = `(${money(dayOptions[selectedDay].adultPrice)})`;
+            priceNotes.adultSubtotal.textContent = money(values.adultAmount);
+            priceNotes.childSubtotal.textContent = money(values.childAmount);
+            priceNotes.discount.textContent = `−${money(values.discount)}`;
+            priceNotes.total.textContent = money(values.total);
+            if (quantities.adult + quantities.child > 0) document.querySelector('#ticketQuantityError').hidden = true;
+        };
+
+        const showStep = (step, addHistory = true) => {
+            const isHome = step === 'home';
+            pageMain.hidden = !isHome;
+            ticketScreen.hidden = isHome;
+            ticketScreen.classList.toggle('is-confirmation', step === 'confirmation');
+            ticketSelection.hidden = step !== 'selection';
+            ticketConfirmation.hidden = step !== 'confirmation';
+            if (addHistory) {
+                const hash = isHome ? '' : step === 'confirmation' ? '#bestilling-bekraeftet' : '#billetter';
+                window.history.pushState({ ticketStep: step }, '', `${window.location.pathname}${window.location.search}${hash}`);
+            }
+            if (!isHome) window.scrollTo({ top: 0, behavior: 'smooth' });
+            const focusTarget = step === 'confirmation' ? document.querySelector('#confirmation-title') : step === 'selection' ? document.querySelector('#ticket-title') : null;
+            if (focusTarget) window.setTimeout(() => focusTarget.focus(), 0);
+        };
+
+        document.querySelectorAll('[data-open-ticket]').forEach((button) => {
+            button.addEventListener('click', () => {
+                quantities.adult = 1;
+                quantities.child = 1;
+                selectedDay = 'saturday';
+                form.reset();
+                document.querySelectorAll('[data-ticket-day]').forEach((dayButton) => {
+                    const selected = dayButton.dataset.ticketDay === selectedDay;
+                    dayButton.classList.toggle('is-selected', selected);
+                    dayButton.setAttribute('aria-pressed', String(selected));
+                });
+                document.querySelector('#emailError').hidden = true;
+                document.querySelector('#ticketQuantityError').hidden = true;
+                document.querySelector('#ticketEmail').removeAttribute('aria-invalid');
+                updatePrices();
+                showStep('selection');
+            });
+        });
+
+        document.querySelectorAll('[data-ticket-day]').forEach((button) => {
+            button.addEventListener('click', () => {
+                selectedDay = button.dataset.ticketDay;
+                document.querySelectorAll('[data-ticket-day]').forEach((dayButton) => {
+                    const selected = dayButton === button;
+                    dayButton.classList.toggle('is-selected', selected);
+                    dayButton.setAttribute('aria-pressed', String(selected));
+                });
+                updatePrices();
+            });
+        });
+
+        document.querySelectorAll('[data-quantity-change]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const type = button.dataset.quantityChange;
+                quantities[type] = Math.max(0, quantities[type] + Number(button.dataset.change));
+                updatePrices();
+            });
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = document.querySelector('#ticketEmail');
+            const emailError = document.querySelector('#emailError');
+            if (!email.validity.valid) {
+                emailError.hidden = false;
+                email.setAttribute('aria-invalid', 'true');
+                email.reportValidity();
+                return;
+            }
+            emailError.hidden = true;
+            email.removeAttribute('aria-invalid');
+            if (quantities.adult + quantities.child === 0) {
+                document.querySelector('#ticketQuantityError').hidden = false;
+                return;
+            }
+            document.querySelector('#ticketQuantityError').hidden = true;
+
+            const values = getTotal();
+            const ticketLabels = [];
+            if (quantities.adult) ticketLabels.push(`${quantities.adult} ${quantities.adult === 1 ? 'voksenbillet' : 'voksenbilletter'}`);
+            if (quantities.child) ticketLabels.push(`${quantities.child} ${quantities.child === 1 ? 'børnebillet' : 'børnebilletter'}`);
+            document.querySelector('#confirmationDay').textContent = dayOptions[selectedDay].label;
+            document.querySelector('#confirmationTickets').textContent = ticketLabels.join(' + ');
+            document.querySelector('#confirmationDiscount').textContent = `Børnerabat: ${money(values.discount)}`;
+            document.querySelector('#confirmationTotal').textContent = money(values.total);
+            document.querySelector('#confirmationEmail').textContent = email.value.trim();
+            showStep('confirmation');
+        });
+
+        document.querySelector('#ticketEmail').addEventListener('input', (event) => {
+            if (event.currentTarget.validity.valid) {
+                document.querySelector('#emailError').hidden = true;
+                event.currentTarget.removeAttribute('aria-invalid');
+            }
+        });
+
+        document.querySelectorAll('[data-ticket-back]').forEach((button) => {
+            button.addEventListener('click', () => {
+                if (window.location.hash === '#bestilling-bekraeftet' || window.location.hash === '#billetter') {
+                    window.history.back();
+                } else {
+                    showStep('home', false);
+                }
+            });
+        });
+
+        window.addEventListener('popstate', () => {
+            const step = window.location.hash === '#bestilling-bekraeftet' ? 'confirmation' : window.location.hash === '#billetter' ? 'selection' : 'home';
+            showStep(step, false);
+        });
+
+        if (window.location.hash === '#billetter' || window.location.hash === '#bestilling-bekraeftet') {
+            showStep(window.location.hash === '#bestilling-bekraeftet' ? 'confirmation' : 'selection', false);
+            updatePrices();
+        }
     })();
 </script>
 </body>
