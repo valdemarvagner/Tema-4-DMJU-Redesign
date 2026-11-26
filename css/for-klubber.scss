@@ -1,0 +1,156 @@
+// Fælles farver fra DMJUs design: blå navigation, marineblå tekst og gråblå baggrund.
+$club-navy: #243c53;
+$club-blue: #6489ad;
+$club-page: #8b99a4;
+$club-card: #6489ad;
+
+// Bootstrap-komponenter og grid anvendes af siden; siden har egne farve- og typografitilpasninger.
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// Grundtypografi og den blågrå sideflade, som binder sektionerne sammen.
+.page-clubs {
+  color: #111;
+  background: $club-page;
+  font-family: Inter, sans-serif;
+}
+
+// Headerens placering og navigation matcher de øvrige DMJU-sider og Figma-framens farver.
+.site-header {
+  position: relative;
+  z-index: 2;
+  background: $club-page;
+}
+
+.site-header-inner { padding: 14px 4.17% 0; }
+.header-top { min-height: 94px; }
+.brand-logo, .social-icon { display: block; flex: 0 0 80px; width: 80px; height: 80px; }
+.brand-logo img, .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+.brand-title { color: $club-navy; font-size: 20px; font-weight: 800; }
+.brand-title strong { font-size: 32px; }
+.brand-title span { margin: 0 15px; font-weight: 400; }
+.main-nav {
+  margin: 0 -4.55%;
+  padding: 22px 4.17% 20px;
+  border-radius: 16px;
+  background: $club-blue;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  .nav { justify-content: space-between; gap: 1rem; }
+  .nav-link { color: #000; font-size: 20px; font-weight: 500; }
+  .nav-link:hover, .nav-link:focus-visible, .nav-link.active { text-decoration: underline; text-underline-offset: 5px; }
+}
+
+// Hero-sektionen bruger modeljernbanebilledet som diskret baggrund og bevarer kontrasten til overskriften.
+.club-hero {
+  min-height: 300px;
+  margin-top: -1px;
+  background: linear-gradient(90deg, rgb(100 137 173 / 96%) 0%, rgb(100 137 173 / 88%) 34%, rgb(36 60 83 / 8%) 100%), url("../img/om-dmju-modeljernbane.png") center 48% / cover no-repeat;
+}
+.club-hero-inner { padding: 27px 4.17% 42px; }
+.club-hero h1 { margin: 0 0 8px; font-size: clamp(2rem, 3.35vw, 3rem); font-weight: 700; }
+.club-hero p { margin: 0; font-size: 24px; font-weight: 700; }
+
+// Indholdsbredder og overskrifter følger den luftige 1440 px Figma-komposition.
+.benefits-section, .membership-section, .application-section { padding-right: 4.2%; padding-left: 4.2%; }
+.benefits-section { padding-top: 30px; }
+.benefits-section h2, .membership-section > h2 { margin: 0 0 22px; font-size: 36px; font-weight: 700; }
+
+// De tre fremhævede medlemsfordele bruger blå flader, marineblå symboler og kompakt tekst.
+.benefit-card {
+  display: flex;
+  gap: 14px;
+  min-height: 151px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: $club-card;
+  i { flex: 0 0 38px; padding-top: 3px; color: $club-navy; font-size: 34px; }
+  h3 { margin: 0 0 8px; font-size: 20px; font-weight: 700; }
+  ul { margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.9; }
+  li::before { content: "✓"; margin-right: 8px; color: $club-navy; font-weight: 800; }
+}
+
+// Trinlisten er semantisk nummereret, mens cirklerne viser trinnummeret visuelt.
+.membership-section { padding-top: 48px; }
+.membership-steps { margin: 0; padding-left: 0; list-style: none; }
+.step-card {
+  position: relative;
+  display: flex;
+  min-height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: #fff;
+  color: $club-navy;
+  text-align: center;
+  span { position: absolute; top: 14px; left: 14px; display: grid; width: 40px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: $club-blue; color: #fff; font-size: 20px; }
+  i { margin-bottom: 14px; font-size: 42px; }
+  h3 { max-width: 190px; margin: 0; font-size: 16px; font-weight: 700; }
+}
+
+// Formularområdet samler den korte vejledning og de nødvendige kluboplysninger.
+.application-section { padding-top: 48px; padding-bottom: 64px; }
+.application-intro h2 { margin: 0 0 12px; font-size: 30px; font-weight: 700; }
+.application-intro p { max-width: 360px; line-height: 1.65; }
+.application-illustration { overflow: hidden; max-width: 360px; border-radius: 16px; }
+.application-illustration img { display: block; width: 100%; height: 230px; object-fit: cover; }
+.application-form { height: 100%; padding: 26px; border-radius: 16px; background: #fff; }
+.application-form legend { margin-bottom: 18px; color: $club-navy; font-size: 23px; font-weight: 700; }
+.application-form .form-label { margin-bottom: 6px; font-weight: 600; }
+.application-form .form-label span { font-size: 13px; font-weight: 400; }
+.application-form .form-control { border-color: #9aa8b3; }
+.application-form textarea { resize: vertical; }
+.form-check-wrap { display: flex; align-items: flex-start; gap: 10px; }
+.form-check-wrap .form-check-input { margin-top: 5px; }
+.btn-submit { padding: 12px 22px; border: 0; border-radius: 8px; background: $club-navy; color: #fff; font-weight: 600; }
+.btn-submit:hover, .btn-submit:focus-visible { background: #172d40; }
+
+// Sidefoden bruger den samme mørke blå og hvide tekst som resten af DMJU-siderne.
+.site-footer { min-height: 135px; background: $club-navy; color: #fff; }
+.footer-inner { min-height: 135px; padding: 20px 4.2%; }
+.footer-brand { display: flex; flex-direction: column; gap: 7px; }
+.footer-brand span { font-size: 20px; }
+.footer-brand small { font-size: 14px; }
+.footer-actions { display: flex; align-items: center; gap: 34px; }
+.footer-facebook { width: 56px; height: 56px; }
+.footer-facebook img { width: 100%; height: 100%; object-fit: contain; }
+.footer-nav { display: flex; flex-direction: column; gap: 8px; }
+.footer-nav a { color: #fff; font-size: 16px; }
+
+// På tablet og mobil stables navigation, fordelskort og trin, så der ikke opstår vandret scroll.
+@media (max-width: 767.98px) {
+  .site-header-inner { padding: 10px 18px 0; }
+  .header-top { min-height: 78px; }
+  .brand-logo, .social-icon { flex-basis: 56px; width: 56px; height: 56px; }
+  .brand-title { font-size: 12px; }
+  .brand-title strong { font-size: 21px; }
+  .brand-title span { margin: 0 6px; }
+  .main-nav { margin: 0 -18px; padding: 10px 14px; border-radius: 12px; }
+  .main-nav .nav { justify-content: center; gap: 0 10px; }
+  .main-nav .nav-link { padding: 6px 4px; font-size: 14px; }
+  .club-hero { min-height: 210px; }
+  .club-hero-inner { padding: 24px 20px; }
+  .club-hero p { font-size: 20px; }
+  .benefits-section, .membership-section, .application-section { padding-right: 20px; padding-left: 20px; }
+  .benefits-section h2, .membership-section > h2 { font-size: 28px; }
+  .benefit-card { min-height: 135px; }
+  .membership-section, .application-section { padding-top: 36px; }
+  .application-form { padding: 20px; }
+  .footer-inner { align-items: flex-start !important; gap: 20px; padding: 22px 20px; }
+  .footer-actions { gap: 12px; }
+  .footer-facebook { width: 42px; height: 42px; }
+  .footer-nav a { font-size: 14px; }
+}
