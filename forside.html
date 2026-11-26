@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="da">
+<head>
+    <!-- Dokumentets metadata og fælles skrifttype sikrer en tilgængelig, responsiv forside. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dansk Modeljernbane Union samler modeljernbaneklubber og gør modeltog tilgængeligt for alle.">
+    <title>DMJU – Dansk Modeljernbane Union</title>
+
+    <!-- Bootstrap 5 leverer grid og tilgængelige hjælpeklasser før sidens egne regler. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/forside.css">
+</head>
+<body class="page-home">
+<!-- Sidehoved: logo, foreningsnavn og navigation følger Figma-rammens farver og placering. -->
+<header class="site-header">
+    <div class="container-fluid site-header-inner">
+        <div class="header-top d-flex align-items-center justify-content-between">
+            <a class="brand-logo" href="forside.html" aria-label="DMJU – gå til forsiden" aria-current="page">
+                <img src="img/dmju-logo.png" width="80" height="80" alt="DMJU-logo">
+            </a>
+            <p class="brand-title mb-0"><strong>DMJU</strong><span class="divider" aria-hidden="true">|</span>Dansk Modeljernbane Union</p>
+            <a class="social-icon" href="https://www.facebook.com/" aria-label="Besøg DMJU på Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="img/facebook-mark-figma.svg" alt="" aria-hidden="true">
+            </a>
+        </div>
+        <!-- Primær navigation: hvert link går til en eksisterende side eller relevant indhold. -->
+        <nav class="main-nav" aria-label="Hovednavigation">
+            <ul class="nav flex-wrap">
+                <li class="nav-item"><a class="nav-link" href="modeltog-for-alle.html">Arrangementer</a></li>
+                <li class="nav-item"><a class="nav-link" href="for-klubber.html">For klubber</a></li>
+                <li class="nav-item"><a class="nav-link" href="for-klubber.html#ansoegning">Hjælpevognen</a></li>
+                <li class="nav-item"><a class="nav-link" href="for-klubber.html#medlemsfordele">Find en klub</a></li>
+                <li class="nav-item"><a class="nav-link" href="om-dmju.html">Om DMJU</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hovedindhold: introduktion og indgange til unionens vigtigste tilbud. -->
+<main>
+    <!-- Sektion 1: velkomst med blikfang og hovedhandling til den kommende udstilling. -->
+    <section class="home-hero" aria-labelledby="home-title">
+        <div class="container hero-content">
+            <p class="hero-eyebrow">Dansk Modeljernbane Union</p>
+            <h1 id="home-title">Modeltog for alle</h1>
+            <p class="hero-copy">Oplev passionen for modeljernbaner – fra små klubanlæg til Danmarks største modeltogsudstilling.</p>
+            <a class="btn hero-button" href="modeltog-for-alle.html">Se den kommende udstilling <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
+
+    <!-- Sektion 2: tre genveje gør det let at finde arrangementer, klubber og information. -->
+    <section class="welcome-section container" aria-labelledby="welcome-title">
+        <header class="section-heading">
+            <p class="section-kicker">Velkommen til DMJU</p>
+            <h2 id="welcome-title">Et fællesskab om modeljernbaner</h2>
+            <p>Vi samler danske modeljernbaneklubber og skaber oplevelser for alle, der holder af tog og miniatureverdener.</p>
+        </header>
+        <div class="row g-4 welcome-grid">
+            <article class="col-12 col-md-4">
+                <a class="welcome-card h-100" href="modeltog-for-alle.html">
+                    <figure class="card-image mb-0"><img src="img/figma-train-12.png" alt="Modeltog på en detaljeret miniaturebane"><figcaption class="visually-hidden">Modeltog og arrangementer</figcaption></figure>
+                    <span class="card-content"><span class="card-label">Oplev sammen</span><span class="card-title">Arrangementer</span><span class="card-link">Se hvad der sker <span aria-hidden="true">→</span></span></span>
+                </a>
+            </article>
+            <article class="col-12 col-md-4">
+                <a class="welcome-card h-100" href="for-klubber.html">
+                    <figure class="card-image mb-0"><img src="img/figma-train-13.png" alt="Modeltog og landskab fra en dansk modeljernbane"><figcaption class="visually-hidden">Klubfællesskab</figcaption></figure>
+                    <span class="card-content"><span class="card-label">Stå stærkere sammen</span><span class="card-title">For klubber</span><span class="card-link">Bliv en del af DMJU <span aria-hidden="true">→</span></span></span>
+                </a>
+            </article>
+            <article class="col-12 col-md-4">
+                <a class="welcome-card h-100" href="om-dmju.html">
+                    <figure class="card-image mb-0"><img src="img/figma-train-14.png" alt="Modeltog på skinner gennem et miniaturelandskab"><figcaption class="visually-hidden">Om Dansk Modeljernbane Union</figcaption></figure>
+                    <span class="card-content"><span class="card-label">Siden 1961</span><span class="card-title">Om DMJU</span><span class="card-link">Mød unionen <span aria-hidden="true">→</span></span></span>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sektion 3: fremhævet dato giver besøgende en hurtig vej til udstillingsdetaljer. -->
+    <section class="event-callout" aria-labelledby="event-callout-title">
+        <div class="container event-callout-inner row align-items-center g-4">
+            <div class="col-12 col-lg-8">
+                <p class="section-kicker">Sæt kryds i kalenderen</p>
+                <h2 id="event-callout-title">MODELTOG FOR ALLE 2027</h2>
+                <p>Danmarks største modeltogsudstilling vender tilbage den 20.–21. marts 2027.</p>
+            </div>
+            <div class="col-12 col-lg-4 text-lg-end">
+                <a class="btn event-button" href="modeltog-for-alle.html">Læs mere om udstillingen <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Sidefod: kontakt, ophavsret og genveje samles i sidens afsluttende landmark. -->
+<footer class="site-footer">
+    <div class="container-fluid footer-inner d-flex align-items-center justify-content-between">
+        <div class="footer-brand"><span>DMJU</span><small>© 2026 Dansk Modeljernbane Union</small></div>
+        <div class="footer-actions">
+            <a class="footer-facebook" href="https://www.facebook.com/" aria-label="DMJU på Facebook" target="_blank" rel="noopener noreferrer"><img src="img/facebook-mark-footer-figma.svg" alt="" aria-hidden="true"></a>
+            <nav class="footer-nav" aria-label="Sidefodsnavigation"><a href="mailto:info@dmju.dk">Kontakt</a><a href="om-dmju.html">Om DMJU</a><a href="for-klubber.html">For klubber</a></nav>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
