@@ -253,6 +253,9 @@ body.page-about {
   .footer-brand,
   .footer-nav { display: flex; flex-direction: column; }
 
+  // Handlingsgruppen holder Facebook-ikonet ved siden af de højrestillede links.
+  .footer-actions { display: flex; align-items: center; gap: 35px; }
+
   .footer-brand > span,
   .footer-nav a { color: #fff; font-size: 20px; line-height: 1.45; }
 
@@ -318,6 +321,7 @@ body.page-about {
   .board-card strong { font-size: 25px; }
 
   .site-footer .footer-inner { min-height: 135px; flex-wrap: wrap; gap: 12px; padding: 18px 20px; }
+  .site-footer .footer-actions { gap: 14px; }
   .site-footer .footer-nav a,
   .site-footer .footer-brand > span { font-size: 16px; }
   .site-footer .footer-facebook { width: 44px; height: 44px; }
